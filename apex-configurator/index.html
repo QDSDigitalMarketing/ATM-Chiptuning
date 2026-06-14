@@ -2,86 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APEX Customs — Sound System Configurator & Quote</title>
-<meta name="description" content="Top-down vehicle sound-system configurator and quotation tool for APEX Customs.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>APEX Customs — Sound System Studio</title>
+<meta name="description" content="Design your car's sound system on a live top-down view and get an instant quote — APEX Customs.">
+<meta name="theme-color" content="#0a0c14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="cfg-header">
-  <div class="cfg-logo">APEX <span>CUSTOMS</span></div>
-  <div class="cfg-title">Sound System Configurator</div>
-  <div class="cfg-brands">ROCKFORD FOSGATE &nbsp;|&nbsp; HELIX &nbsp;|&nbsp; DUDU AUTO &nbsp;|&nbsp; MATCH</div>
+<!-- ambient animated backdrop -->
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-brand">
+    <div class="hdr-logo">APEX <span>CUSTOMS</span></div>
+    <div class="hdr-sub">Sound System Studio</div>
+  </div>
+
+  <nav class="stepper" id="stepper" aria-label="Build steps">
+    <button class="step" data-step="vehicle"><i>1</i><span>Vehicle</span></button>
+    <button class="step" data-step="components"><i>2</i><span>Components</span></button>
+    <button class="step" data-step="fitment"><i>3</i><span>Fitment</span></button>
+    <button class="step" data-step="quote"><i>4</i><span>Quote</span></button>
+  </nav>
+
+  <div class="hdr-total" id="hdrTotal" title="Running total">
+    <span class="ht-label">Total</span>
+    <span class="ht-value" id="hdrTotalValue">R 0</span>
+  </div>
 </header>
 
 <div id="draftBanner" class="draft-banner" hidden>
-  ⚠️ DRAFT PRICING — figures are placeholders. Confirm before sending to a customer.
+  <span>⚠️ Draft pricing — figures are placeholders. Confirm before sending to a customer.</span>
 </div>
 
-<div class="cfg-main">
-  <!-- LEFT PANEL — vehicle + zones -->
-  <aside class="cfg-left" id="leftPanel">
-    <div class="panel-title">Select Vehicle</div>
-    <div class="vehicle-grid" id="vehicleGrid"></div>
+<!-- MAIN -->
+<div class="studio">
+  <!-- LEFT -->
+  <aside class="panel panel-left" id="panelLeft">
+    <section class="block">
+      <div class="block-title">Choose vehicle</div>
+      <div class="vehicle-grid" id="vehicleGrid"></div>
+    </section>
 
-    <div class="panel-title" style="margin-top:1rem">System Zones</div>
-    <div id="zoneList"></div>
+    <section class="block">
+      <div class="block-title">Build progress
+        <span class="progress-count" id="progressCount">0 / 0</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div id="zoneList" class="zone-list"></div>
+    </section>
   </aside>
 
-  <!-- CENTER — car view -->
-  <main class="cfg-center">
-    <div class="car-canvas" id="carCanvas">
-      <svg class="connection-lines" id="connLines"></svg>
-      <svg class="car-svg" id="carSvg" viewBox="0 0 700 467"></svg>
-      <div id="hotspots"></div>
+  <!-- CENTER -->
+  <main class="stage">
+    <div class="stage-hint" id="stageHint">Tap a glowing node to configure it</div>
+    <div class="car-wrap" id="carWrap">
+      <div class="car-glow" aria-hidden="true"></div>
+      <div class="car-canvas" id="carCanvas">
+        <svg class="car-svg" id="carSvg" viewBox="0 0 700 467" aria-label="Top-down vehicle view"></svg>
+        <div id="hotspots"></div>
+      </div>
+      <div class="scanline" aria-hidden="true"></div>
     </div>
+    <div class="stage-vehicle" id="stageVehicle"></div>
   </main>
 
-  <!-- RIGHT PANEL — product + quote -->
-  <aside class="cfg-right" id="rightPanel">
-    <div class="panel-title">Product Selection</div>
-    <div id="productPanel">
-      <div class="zone-card">
-        <div class="zone-card-title">Select a zone</div>
-        <div class="zone-empty">Click a glowing node on the vehicle to configure that zone</div>
+  <!-- RIGHT -->
+  <aside class="panel panel-right" id="panelRight">
+    <section class="block" id="productBlock">
+      <div class="block-title">Product</div>
+      <div id="productPanel">
+        <div class="empty-card">
+          <div class="empty-emoji">🎯</div>
+          <div class="empty-title">Select a zone</div>
+          <div class="empty-sub">Tap a glowing node on the vehicle to choose a product for it.</div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Fitment -->
-    <div class="panel-title" style="margin-top:1.25rem">Fitment / Labour</div>
-    <div class="product-select-wrap">
-      <select class="product-select" id="fitmentSelect">
-        <option value="">— No fitment selected —</option>
-      </select>
-    </div>
+    <section class="block">
+      <div class="block-title">Fitment &amp; labour</div>
+      <div id="fitmentCards" class="fitment-cards"></div>
+    </section>
 
-    <!-- Extras -->
-    <div class="panel-title" style="margin-top:1.25rem">Extras</div>
-    <div id="accessoryList" class="accessory-list"></div>
+    <section class="block">
+      <div class="block-title">Extras</div>
+      <div id="accessoryList" class="chip-grid"></div>
+    </section>
 
-    <!-- Build + totals -->
-    <div class="build-summary" id="buildSummary">
-      <h3>Quote Summary</h3>
-      <div id="summaryList">
-        <div class="zone-empty">No components selected yet</div>
+    <section class="block summary-block">
+      <div class="block-title">Quote summary</div>
+      <div id="summaryList" class="summary-list">
+        <div class="empty-sub">Nothing selected yet.</div>
       </div>
       <div class="totals" id="totals"></div>
-    </div>
+    </section>
 
-    <div class="action-row">
-      <button class="btn-action" id="btnQuote">Generate Quote</button>
-      <button class="btn-action btn-ghost" id="btnSave">Save</button>
-    </div>
-    <div class="action-row">
-      <button class="btn-action btn-ghost" id="btnExport">Export JSON</button>
-      <button class="btn-action btn-ghost" id="btnImport">Import</button>
+    <div class="tool-row">
+      <button class="btn ghost" id="btnSave">Save</button>
+      <button class="btn ghost" id="btnExport">Export</button>
+      <button class="btn ghost" id="btnImport">Import</button>
+      <button class="btn ghost danger" id="btnReset">Reset</button>
       <input type="file" id="importFile" accept="application/json" hidden>
     </div>
-    <button class="btn-clear" id="btnReset">Reset Build</button>
   </aside>
+</div>
+
+<!-- STICKY ACTION BAR (mobile + desktop) -->
+<div class="actionbar">
+  <button class="ab-toggle" id="abVehicle" data-target="panelLeft">🚗 Vehicle</button>
+  <div class="ab-total">
+    <span>Total</span><strong id="abTotalValue">R 0</strong>
+  </div>
+  <button class="ab-toggle" id="abConfig" data-target="panelRight">⚙️ Configure</button>
+  <button class="btn primary ab-quote" id="btnQuote">Quote →</button>
 </div>
 
 <!-- QUOTE MODAL -->
@@ -89,7 +128,7 @@
   <div class="modal">
     <div class="modal-head">
       <h2>Customer &amp; Quote</h2>
-      <button class="modal-close" id="quoteClose">✕</button>
+      <button class="modal-close" id="quoteClose" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
       <div class="cust-grid">
@@ -101,13 +140,16 @@
       <div id="quoteDoc" class="quote-doc"></div>
     </div>
     <div class="modal-foot">
-      <button class="btn-action" id="btnPrint">Print / Save PDF</button>
-      <button class="btn-action btn-ghost" id="btnQuoteExport">Export JSON</button>
+      <button class="btn primary" id="btnPrint">Print / Save PDF</button>
+      <button class="btn ghost" id="btnQuoteExport">Export JSON</button>
     </div>
   </div>
 </div>
 
-<footer class="cfg-footer" id="cfgFooter"></footer>
+<!-- toast host -->
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+<footer class="ftr" id="ftr"></footer>
 
 <script type="module" src="js/app.js"></script>
 </body>
