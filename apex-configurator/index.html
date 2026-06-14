@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Customs — Sound System Configurator & Quote</title>
+<meta name="description" content="Top-down vehicle sound-system configurator and quotation tool for APEX Customs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="cfg-header">
+  <div class="cfg-logo">APEX <span>CUSTOMS</span></div>
+  <div class="cfg-title">Sound System Configurator</div>
+  <div class="cfg-brands">ROCKFORD FOSGATE &nbsp;|&nbsp; HELIX &nbsp;|&nbsp; DUDU AUTO &nbsp;|&nbsp; MATCH</div>
+</header>
+
+<div id="draftBanner" class="draft-banner" hidden>
+  ⚠️ DRAFT PRICING — figures are placeholders. Confirm before sending to a customer.
+</div>
+
+<div class="cfg-main">
+  <!-- LEFT PANEL — vehicle + zones -->
+  <aside class="cfg-left" id="leftPanel">
+    <div class="panel-title">Select Vehicle</div>
+    <div class="vehicle-grid" id="vehicleGrid"></div>
+
+    <div class="panel-title" style="margin-top:1rem">System Zones</div>
+    <div id="zoneList"></div>
+  </aside>
+
+  <!-- CENTER — car view -->
+  <main class="cfg-center">
+    <div class="car-canvas" id="carCanvas">
+      <svg class="connection-lines" id="connLines"></svg>
+      <svg class="car-svg" id="carSvg" viewBox="0 0 700 467"></svg>
+      <div id="hotspots"></div>
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL — product + quote -->
+  <aside class="cfg-right" id="rightPanel">
+    <div class="panel-title">Product Selection</div>
+    <div id="productPanel">
+      <div class="zone-card">
+        <div class="zone-card-title">Select a zone</div>
+        <div class="zone-empty">Click a glowing node on the vehicle to configure that zone</div>
+      </div>
+    </div>
+
+    <!-- Fitment -->
+    <div class="panel-title" style="margin-top:1.25rem">Fitment / Labour</div>
+    <div class="product-select-wrap">
+      <select class="product-select" id="fitmentSelect">
+        <option value="">— No fitment selected —</option>
+      </select>
+    </div>
+
+    <!-- Extras -->
+    <div class="panel-title" style="margin-top:1.25rem">Extras</div>
+    <div id="accessoryList" class="accessory-list"></div>
+
+    <!-- Build + totals -->
+    <div class="build-summary" id="buildSummary">
+      <h3>Quote Summary</h3>
+      <div id="summaryList">
+        <div class="zone-empty">No components selected yet</div>
+      </div>
+      <div class="totals" id="totals"></div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-action" id="btnQuote">Generate Quote</button>
+      <button class="btn-action btn-ghost" id="btnSave">Save</button>
+    </div>
+    <div class="action-row">
+      <button class="btn-action btn-ghost" id="btnExport">Export JSON</button>
+      <button class="btn-action btn-ghost" id="btnImport">Import</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </div>
+    <button class="btn-clear" id="btnReset">Reset Build</button>
+  </aside>
+</div>
+
+<!-- QUOTE MODAL -->
+<div class="modal-overlay" id="quoteModal" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Customer &amp; Quote</h2>
+      <button class="modal-close" id="quoteClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="cust-grid">
+        <label>Customer name<input type="text" id="custName" placeholder="e.g. Michael Cowley"></label>
+        <label>Phone / WhatsApp<input type="text" id="custPhone" placeholder="082 …"></label>
+        <label>Vehicle<input type="text" id="custVehicle" placeholder="e.g. VW Polo 1.4 TSI"></label>
+        <label>Reg / Notes<input type="text" id="custNotes" placeholder="optional"></label>
+      </div>
+      <div id="quoteDoc" class="quote-doc"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-action" id="btnPrint">Print / Save PDF</button>
+      <button class="btn-action btn-ghost" id="btnQuoteExport">Export JSON</button>
+    </div>
+  </div>
+</div>
+
+<footer class="cfg-footer" id="cfgFooter"></footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
