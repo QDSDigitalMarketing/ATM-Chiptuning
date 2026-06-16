@@ -1,111 +1,112 @@
-APEX CUSTOMS — TOP-DOWN VEHICLE IMAGE PROMPTS (for ChatGPT / GPT-4o image generation)
-=====================================================================================
+APEX CUSTOMS — TOP-DOWN VEHICLE PROMPTS  (ChatGPT / GPT-4o image generation)
+TECHNICAL BLUEPRINT STYLE · RIGHT-HAND DRIVE (South Africa)
+============================================================================
 
 HOW TO USE
-- Paste a prompt into ChatGPT. When it asks (or in the size picker) choose LANDSCAPE / WIDE (3:2).
-- Each prompt below is self-contained — you can paste any one on its own.
-- For a perfectly MATCHING set, do them in ONE chat: paste #1, then for the rest say:
-  "Same exact style, lighting, overhead angle, scale and dark background as the previous
-   image — change only the vehicle to: <paste the vehicle line>."
+- Paste a prompt into ChatGPT. Choose the LANDSCAPE / WIDE size (3:2).
+- Each prompt is self-contained — paste any one on its own.
+- For a MATCHING set, do them in ONE chat: paste #1, then for each next one say:
+  "Same exact technical blueprint style, line weight, scale, right-hand-drive layout
+   and dark background as the previous image — change only the vehicle to: <vehicle line>."
 - Download each, rename to: sedan.png, hatchback.png, suv.png, coupe.png, doublecab.png, singlecab.png
-- Send them back to me and I'll drop them in and line the hotspots up.
+- Send them to me and I'll place them and align the hotspots.
 
-MUST-HAVES (already baked into every prompt — don't remove):
-- True top-down, directly overhead, orthographic (no perspective/tilt)
-- Front of vehicle points to TOP of frame; vehicle centered, ~70% of width
-- Roof removed / cutaway so the interior (seats, doors, dash, boot) is visible
-- No text, labels, logos, watermarks, people or measurement lines
-
-
--------------------------------------------------------------------------------------
-1) SEDAN  -> save as  sedan.png
--------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a 4-door sedan/saloon car,
-shown as if the roof has been cleanly removed to reveal the entire interior — two rows of
-seats, four doors, dashboard and centre console, with the engine bay at the top and a
-separate boot at the bottom, all clearly visible from above. The body is dark metallic
-charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim light
-tracing the body edges and a faint cool interior glow. Premium, clean, minimal automotive
-studio render — sharp, detailed, high quality. The front of the car points to the top of
-the frame. Centre the car with even margins so it fills about 70% of the width. Solid very
-dark background, colour #070912. Absolutely no text, no labels, no logos, no watermarks,
-no people, and no measurement lines.
+LOCKED-IN RULES (in every prompt — don't remove):
+- Flat 2D TECHNICAL TOP-DOWN DIAGRAM / blueprint — NOT photorealistic, NOT a 3D render
+- Directly overhead, orthographic; front of vehicle points to the TOP of the frame
+- Interior shown as clean LINE-WORK (seats, doors, dash, console, boot) — not a solid fill
+- RIGHT-HAND DRIVE: steering wheel + driver's seat on the RIGHT side
+- Cyan (#19D0FF) + white line-work on solid dark #070912; centered; even margins
+- No text, numbers, dimension lines, logos, people, or extra colours
 
 
 -------------------------------------------------------------------------------------
-2) HATCHBACK  -> save as  hatchback.png
+1) SEDAN  ->  sedan.png
 -------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a compact 5-door hatchback,
-shown as if the roof has been cleanly removed to reveal the entire interior — two rows of
-seats, four doors, dashboard and centre console, and a short rear cargo area under the
-tailgate, all clearly visible from above. The body is dark metallic charcoal-grey, softly
-lit from directly above, with a subtle cyan (#19D0FF) rim light tracing the body edges and
-a faint cool interior glow. Premium, clean, minimal automotive studio render — sharp,
-detailed, high quality. The front of the car points to the top of the frame. Centre the
-car with even margins so it fills about 70% of the width. Solid very dark background,
-colour #070912. Absolutely no text, no labels, no logos, no watermarks, no people, and no
-measurement lines.
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a 4-door
+sedan, viewed directly from above with no perspective. Draw the outer body as a smooth
+shape with a crisp glowing cyan (#19D0FF) outline, and the interior as simplified thin
+cyan-and-white line-work: two rows of seats, four doors, dashboard, steering wheel,
+centre console, engine bay at the top and a separate boot at the bottom. RIGHT-HAND
+DRIVE — the steering wheel and driver's seat are on the RIGHT side. Modern high-tech HUD
+look, sharp vector-like lines, subtle glow, solid very dark background colour #070912.
+Front of the car points to the top of the frame; centre it with even margins. No text,
+no numbers, no dimension lines, no logos, no people, no other colours.
 
 
 -------------------------------------------------------------------------------------
-3) SUV  -> save as  suv.png
+2) HATCHBACK  ->  hatchback.png
 -------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a large SUV with a tall, wide
-body, shown as if the roof has been cleanly removed to reveal the entire interior — two (or
-three) rows of seats, four doors, dashboard and centre console, and a rear boot, all clearly
-visible from above. The body is dark metallic charcoal-grey, softly lit from directly above,
-with a subtle cyan (#19D0FF) rim light tracing the body edges and a faint cool interior glow.
-Premium, clean, minimal automotive studio render — sharp, detailed, high quality. The front
-of the vehicle points to the top of the frame. Centre the vehicle with even margins so it
-fills about 70% of the width. Solid very dark background, colour #070912. Absolutely no text,
-no labels, no logos, no watermarks, no people, and no measurement lines.
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a compact
+5-door hatchback, viewed directly from above with no perspective. Draw the outer body as
+a smooth shape with a crisp glowing cyan (#19D0FF) outline, and the interior as simplified
+thin cyan-and-white line-work: two rows of seats, four doors, dashboard, steering wheel,
+centre console, and a short rear cargo area under the tailgate. RIGHT-HAND DRIVE — the
+steering wheel and driver's seat are on the RIGHT side. Modern high-tech HUD look, sharp
+vector-like lines, subtle glow, solid very dark background colour #070912. Front of the
+car points to the top of the frame; centre it with even margins. No text, no numbers, no
+dimension lines, no logos, no people, no other colours.
 
 
 -------------------------------------------------------------------------------------
-4) COUPE  -> save as  coupe.png
+3) SUV  ->  suv.png
 -------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a sporty 2-door coupé with a
-long bonnet, shown as if the roof has been cleanly removed to reveal the entire interior —
-two front seats and a small rear bench, two doors, dashboard and centre console, all clearly
-visible from above. The body is dark metallic charcoal-grey, softly lit from directly above,
-with a subtle cyan (#19D0FF) rim light tracing the body edges and a faint cool interior glow.
-Premium, clean, minimal automotive studio render — sharp, detailed, high quality. The front
-of the car points to the top of the frame. Centre the car with even margins so it fills about
-70% of the width. Solid very dark background, colour #070912. Absolutely no text, no labels,
-no logos, no watermarks, no people, and no measurement lines.
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a large SUV
+with a wide body, viewed directly from above with no perspective. Draw the outer body as a
+smooth shape with a crisp glowing cyan (#19D0FF) outline, and the interior as simplified
+thin cyan-and-white line-work: two or three rows of seats, four doors, dashboard, steering
+wheel, centre console, and a rear boot. RIGHT-HAND DRIVE — the steering wheel and driver's
+seat are on the RIGHT side. Modern high-tech HUD look, sharp vector-like lines, subtle glow,
+solid very dark background colour #070912. Front of the vehicle points to the top of the
+frame; centre it with even margins. No text, no numbers, no dimension lines, no logos, no
+people, no other colours.
 
 
 -------------------------------------------------------------------------------------
-5) DOUBLE CAB BAKKIE / PICKUP  -> save as  doublecab.png
+4) COUPE  ->  coupe.png
 -------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a double-cab bakkie (pickup
-truck), shown as if the cab roof has been cleanly removed to reveal the interior — a full
-four-door cab with two rows of seats, dashboard and centre console — and a large open load
-bed / cargo tub taking up the rear third, all clearly visible from above. The body is dark
-metallic charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim
-light tracing the body edges and a faint cool interior glow. Premium, clean, minimal
-automotive studio render — sharp, detailed, high quality. The front of the vehicle points
-to the top of the frame. Centre the vehicle with even margins so it fills about 70% of the
-width. Solid very dark background, colour #070912. Absolutely no text, no labels, no logos,
-no watermarks, no people, and no measurement lines.
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a sporty
+2-door coupé with a long bonnet, viewed directly from above with no perspective. Draw the
+outer body as a smooth shape with a crisp glowing cyan (#19D0FF) outline, and the interior
+as simplified thin cyan-and-white line-work: two front seats and a small rear bench, two
+doors, dashboard, steering wheel and centre console. RIGHT-HAND DRIVE — the steering wheel
+and driver's seat are on the RIGHT side. Modern high-tech HUD look, sharp vector-like lines,
+subtle glow, solid very dark background colour #070912. Front of the car points to the top
+of the frame; centre it with even margins. No text, no numbers, no dimension lines, no
+logos, no people, no other colours.
 
 
 -------------------------------------------------------------------------------------
-6) SINGLE CAB BAKKIE / PICKUP  -> save as  singlecab.png
+5) DOUBLE CAB BAKKIE / PICKUP  ->  doublecab.png
 -------------------------------------------------------------------------------------
-Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
-overhead and orthographic with no perspective distortion, of a single-cab bakkie (pickup
-truck), shown as if the cab roof has been cleanly removed to reveal the interior — a two-door
-cab with a single row of seats, dashboard and centre console — and a long open load bed /
-cargo tub taking up the rear two-thirds, all clearly visible from above. The body is dark
-metallic charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim
-light tracing the body edges and a faint cool interior glow. Premium, clean, minimal
-automotive studio render — sharp, detailed, high quality. The front of the vehicle points
-to the top of the frame. Centre the vehicle with even margins so it fills about 70% of the
-width. Solid very dark background, colour #070912. Absolutely no text, no labels, no logos,
-no watermarks, no people, and no measurement lines.
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a double-cab
+bakkie (pickup truck), viewed directly from above with no perspective. Draw the outer body
+as a smooth shape with a crisp glowing cyan (#19D0FF) outline, and the interior as simplified
+thin cyan-and-white line-work: a full four-door cab with two rows of seats, dashboard,
+steering wheel and centre console, plus a large open load bed / cargo tub across the rear
+third drawn as a clean empty rectangle. RIGHT-HAND DRIVE — the steering wheel and driver's
+seat are on the RIGHT side. Modern high-tech HUD look, sharp vector-like lines, subtle glow,
+solid very dark background colour #070912. Front of the vehicle points to the top of the
+frame; centre it with even margins. No text, no numbers, no dimension lines, no logos, no
+people, no other colours.
+
+
+-------------------------------------------------------------------------------------
+6) SINGLE CAB BAKKIE / PICKUP  ->  singlecab.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A clean, flat 2D technical top-down
+diagram (blueprint / schematic style, NOT photorealistic, NOT a 3D render) of a single-cab
+bakkie (pickup truck), viewed directly from above with no perspective. Draw the outer body
+as a smooth shape with a crisp glowing cyan (#19D0FF) outline, and the interior as simplified
+thin cyan-and-white line-work: a two-door cab with a single row of seats, dashboard, steering
+wheel and centre console, plus a long open load bed / cargo tub across the rear two-thirds
+drawn as a clean empty rectangle. RIGHT-HAND DRIVE — the steering wheel and driver's seat are
+on the RIGHT side. Modern high-tech HUD look, sharp vector-like lines, subtle glow, solid
+very dark background colour #070912. Front of the vehicle points to the top of the frame;
+centre it with even margins. No text, no numbers, no dimension lines, no logos, no people,
+no other colours.
