@@ -49,8 +49,20 @@ function selectVehicle(type) {
 
 // ── Car + hotspots ───────────────────────────────────────────
 function renderCar() {
+  // Vehicle artwork: try a top-down render (assets/vehicles/<type>.webp);
+  // fall back to the built-in SVG schematic until artwork is dropped in.
   $('carSvg').innerHTML = vehicleSVGs[state.vehicle];
   $('stageVehicle').textContent = vehicleConfigs[state.vehicle].label;
+  const canvas = $('carCanvas'), img = $('carImg');
+  img.classList.remove('loaded'); canvas.classList.remove('has-img');
+  img.dataset.ext = 'webp';
+  img.onload = () => { img.classList.add('loaded'); canvas.classList.add('has-img'); };
+  img.onerror = () => {
+    if (img.dataset.ext === 'webp') { img.dataset.ext = 'png'; img.src = `assets/vehicles/${state.vehicle}.png`; }
+    else { img.classList.remove('loaded'); canvas.classList.remove('has-img'); } // fall back to SVG schematic
+  };
+  img.src = `assets/vehicles/${state.vehicle}.webp`;
+
   const host = $('hotspots');
   host.innerHTML = '';
   Object.entries(vehicleConfigs[state.vehicle].zones).forEach(([zoneId, pos]) => {
@@ -63,6 +75,27 @@ function renderCar() {
     dot.onclick = () => { selectZone(zoneId); if (isMobile()) openDrawer('panelRight'); };
     host.appendChild(dot);
   });
+  renderConnections();
+}
+
+// Animated signal routing: head unit → (DSP) → amp → speakers/sub.
+function renderConnections() {
+  const zones = vehicleConfigs[state.vehicle].zones;
+  const has = (id) => state.zones[id] && zones[id];
+  const pt = (id) => zones[id];
+  const lines = [];
+  const hub = has('amp') ? 'amp' : (has('headunit') ? 'headunit' : null);
+  if (hub) {
+    if (has('headunit') && hub !== 'headunit') {
+      if (has('dsp')) { lines.push(['headunit', 'dsp'], ['dsp', 'amp']); }
+      else lines.push(['headunit', 'amp']);
+    }
+    ['tweeterL', 'tweeterR', 'frontL', 'frontR', 'rearL', 'rearR', 'sub'].forEach(s => { if (has(s)) lines.push([hub, s]); });
+  }
+  $('connLines').innerHTML = lines.map(([a, b]) => {
+    const p = pt(a), q = pt(b);
+    return `<line class="conn-line" x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}"/>`;
+  }).join('');
 }
 
 // ── Zone list + progress ─────────────────────────────────────
