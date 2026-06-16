@@ -84,14 +84,15 @@ export const vehicleSVGs = {
   </g>`
 };
 
-// Hotspot zone positions per body type (% of canvas). category links zone → catalog category.
+// Hotspot zone positions per body type (% of canvas), tuned to the
+// assets/vehicles/<type>.png blueprints. category links zone → catalog category.
 export const vehicleConfigs = {
-  sedan:     { label:'Sedan',      zones:{ headunit:{x:50,y:17}, dsp:{x:50,y:82}, tweeterL:{x:34,y:22}, tweeterR:{x:66,y:22}, frontL:{x:31,y:32}, frontR:{x:69,y:32}, rearL:{x:31,y:62}, rearR:{x:69,y:62}, sub:{x:42,y:82}, amp:{x:58,y:82}, camFront:{x:50,y:9}, camRear:{x:50,y:92} }},
-  hatchback: { label:'Hatchback',  zones:{ headunit:{x:50,y:20}, dsp:{x:50,y:82}, tweeterL:{x:35,y:25}, tweeterR:{x:65,y:25}, frontL:{x:32,y:35}, frontR:{x:68,y:35}, rearL:{x:32,y:60}, rearR:{x:68,y:60}, sub:{x:42,y:80}, amp:{x:58,y:80}, camFront:{x:50,y:12}, camRear:{x:50,y:88} }},
-  suv:       { label:'SUV',        zones:{ headunit:{x:50,y:17}, dsp:{x:50,y:82}, tweeterL:{x:33,y:22}, tweeterR:{x:67,y:22}, frontL:{x:30,y:32}, frontR:{x:70,y:32}, rearL:{x:30,y:62}, rearR:{x:70,y:62}, sub:{x:42,y:82}, amp:{x:58,y:82}, camFront:{x:50,y:9}, camRear:{x:50,y:92} }},
-  doublecab: { label:'Double Cab', zones:{ headunit:{x:50,y:17}, dsp:{x:50,y:50}, tweeterL:{x:34,y:20}, tweeterR:{x:66,y:20}, frontL:{x:30,y:30}, frontR:{x:70,y:30}, rearL:{x:30,y:42}, rearR:{x:70,y:42}, sub:{x:42,y:50}, amp:{x:58,y:50}, camFront:{x:50,y:8}, camRear:{x:50,y:95} }},
-  singlecab: { label:'Single Cab', zones:{ headunit:{x:50,y:17}, dsp:{x:50,y:42}, tweeterL:{x:35,y:20}, tweeterR:{x:65,y:20}, frontL:{x:31,y:28}, frontR:{x:69,y:28}, sub:{x:42,y:42}, amp:{x:58,y:42}, camFront:{x:50,y:8}, camRear:{x:50,y:95} }},
-  coupe:     { label:'Coupé',      zones:{ headunit:{x:50,y:19}, dsp:{x:50,y:80}, tweeterL:{x:35,y:24}, tweeterR:{x:65,y:24}, frontL:{x:32,y:34}, frontR:{x:68,y:34}, sub:{x:42,y:80}, amp:{x:58,y:80}, camFront:{x:50,y:10}, camRear:{x:50,y:90} }}
+  sedan:     { label:'Sedan',      zones:{ headunit:{x:50,y:32}, dsp:{x:50,y:56}, tweeterL:{x:31,y:35}, tweeterR:{x:69,y:35}, frontL:{x:28,y:48}, frontR:{x:72,y:48}, rearL:{x:28,y:64}, rearR:{x:72,y:64}, sub:{x:44,y:86}, amp:{x:56,y:86}, camFront:{x:50,y:6}, camRear:{x:50,y:95} }},
+  hatchback: { label:'Hatchback',  zones:{ headunit:{x:50,y:31}, dsp:{x:50,y:55}, tweeterL:{x:31,y:33}, tweeterR:{x:69,y:33}, frontL:{x:29,y:47}, frontR:{x:71,y:47}, rearL:{x:29,y:63}, rearR:{x:71,y:63}, sub:{x:44,y:81}, amp:{x:56,y:81}, camFront:{x:50,y:8}, camRear:{x:50,y:92} }},
+  suv:       { label:'SUV',        zones:{ headunit:{x:50,y:30}, dsp:{x:50,y:52}, tweeterL:{x:30,y:31}, tweeterR:{x:70,y:31}, frontL:{x:28,y:42}, frontR:{x:72,y:42}, rearL:{x:28,y:60}, rearR:{x:72,y:60}, sub:{x:44,y:86}, amp:{x:56,y:86}, camFront:{x:50,y:5}, camRear:{x:50,y:95} }},
+  doublecab: { label:'Double Cab', zones:{ headunit:{x:50,y:27}, dsp:{x:50,y:45}, tweeterL:{x:33,y:28}, tweeterR:{x:67,y:28}, frontL:{x:31,y:38}, frontR:{x:69,y:38}, rearL:{x:31,y:50}, rearR:{x:69,y:50}, sub:{x:44,y:55}, amp:{x:56,y:55}, camFront:{x:50,y:5}, camRear:{x:50,y:95} }},
+  singlecab: { label:'Single Cab', zones:{ headunit:{x:50,y:28}, dsp:{x:50,y:43}, tweeterL:{x:33,y:30}, tweeterR:{x:67,y:30}, frontL:{x:31,y:40}, frontR:{x:69,y:40}, sub:{x:44,y:46}, amp:{x:56,y:46}, camFront:{x:50,y:5}, camRear:{x:50,y:95} }},
+  coupe:     { label:'Coupé',      zones:{ headunit:{x:50,y:37}, dsp:{x:50,y:60}, tweeterL:{x:33,y:39}, tweeterR:{x:67,y:39}, frontL:{x:30,y:52}, frontR:{x:70,y:52}, sub:{x:44,y:82}, amp:{x:56,y:82}, camFront:{x:50,y:6}, camRear:{x:50,y:95} }}
 };
 
 // Zone metadata. category must match a key in catalog.js → categories.
