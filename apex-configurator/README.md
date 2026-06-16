@@ -52,6 +52,32 @@ The app is fully static, so GitHub Pages serves it as-is:
 > and no secrets**, but it is your brand — disable Pages anytime in the same settings to
 > take it offline.
 
+## Import real products from WooCommerce
+
+`apexcustoms.store` (WooCommerce) is the product master. To load the real catalog:
+
+1. WP Admin → **Products → All Products → Export → Generate CSV**.
+2. Run the importer (zero-dep, no install):
+
+   ```bash
+   npm run import -- path/to/wc-product-export.csv          # writes catalog
+   npm run import -- path/to/wc-product-export.csv --dry     # report only
+   ```
+
+The importer parses the CSV, picks **Sale price → Regular price**, maps each
+product to a zone (source / processor / speaker / sub / amp / camera) from its
+WooCommerce **Categories** (falling back to the product name), detects the brand,
+and rewrites **only** the block between the `AUTOGEN` markers in
+`js/data/catalog.js` — your settings, fitment tiers and extras are left alone.
+It prints a report of counts, any items with no price (POA), and anything it
+couldn't categorise (e.g. merchandise) so nothing maps silently wrong.
+
+After importing: review prices, set `PRICES_CONFIRMED = true`, run `npm test`, commit.
+A sample export lives at `scripts/sample-woocommerce.csv` to try it out.
+
+> Assumes WooCommerce prices include VAT (typical SA setup). If yours exclude
+> VAT, set `settings.pricesIncludeVat = false` in `catalog.js`.
+
 ## Editing prices & products — one file
 
 All catalog data, pricing, VAT, fitment tiers, extras and business details live in

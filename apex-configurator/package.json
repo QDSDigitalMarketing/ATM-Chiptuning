@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js --no-reload",
-    "test": "node test/smoke.mjs"
+    "test": "node test/smoke.mjs",
+    "import": "node scripts/import-woocommerce.mjs"
   },
   "engines": {
     "node": ">=18"

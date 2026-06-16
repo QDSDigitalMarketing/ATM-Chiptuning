@@ -1,0 +1,9 @@
+ID,Type,SKU,Name,Published,Visibility in catalog,Short description,Description,Regular price,Sale price,Categories,Tags,Brand,Images
+101,simple,DUDU5-9,"DUDU5 9"" Android Head Unit",1,visible,"<p>UIS7862 · 4GB/64GB · HD · DSP · CarPlay</p>","Long desc here",5799,,"Head Units > Android","carplay","DUDU Auto",https://x/1.jpg
+102,simple,HELIX-DSP-MINI,HELIX DSP MINI MK2,1,visible,"6ch · 96kHz/24-bit High-Res",,6499,,"DSP & Processors","dsp","Helix",
+103,simple,RF-PUNCH-65C,"Rockford Fosgate Punch 6.5"" Component Kit",1,visible,"Punch series component speakers",,3499,2999,"Speakers > Component","","Rockford Fosgate",
+104,simple,RF-P3-12,"Rockford Fosgate Punch P3 12"" DVC",1,visible,"Punch P3 · 12 inch · DVC subwoofer",,3999,,"Subwoofers","bass","Rockford Fosgate",
+105,simple,RF-T1500,"Rockford Fosgate T1500-1bdCP Amplifier",1,visible,"Power 1500W mono Constant Power",,8999,,"Amplifiers > Mono","","Rockford Fosgate",
+106,simple,CAM-360,360 Surround Camera System,1,visible,"4-camera panoramic view",,4999,,"Cameras","","",
+107,simple,MERCH-CAP,APEX Customs Cap,1,visible,"Branded cap",,250,,"Merchandise","apparel","APEX",
+108,variation,,DUDU5 9 variation,1,visible,,,5799,,"Head Units",,,

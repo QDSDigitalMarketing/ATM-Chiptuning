@@ -31,6 +31,11 @@ export const settings = {
 // ── Component catalog, grouped by category, then brand ────────
 // category keys must match zoneInfo[*].category in vehicles.js
 // price = ZAR. price 0 / null = POA (price on application).
+//
+// The block between the AUTOGEN markers below is rewritten by
+// `npm run import -- <woocommerce-export.csv>`. Edit prices here by
+// hand only if you are NOT using the importer (it overwrites this block).
+// <<<CATALOG_AUTOGEN_START>>>
 export const catalog = {
   source: [
     { id:'dudu3-9',    brand:'DUDU Auto', name:'DUDU3 9"',        detail:'UIS8581 · 4GB/64GB · HD · CarPlay',        price:3499 },
@@ -110,6 +115,7 @@ export const catalog = {
     { id:'cam-none',    brand:'—',    name:'None',                detail:'No camera',                price:0    }
   ]
 };
+// <<<CATALOG_AUTOGEN_END>>>
 
 // ── Fitment / installation labour tiers ──────────────────────
 export const fitmentTiers = [
