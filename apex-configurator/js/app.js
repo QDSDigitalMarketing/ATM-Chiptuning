@@ -13,6 +13,7 @@ let state = freshState('doublecab');
 let activeZone = null;
 let quoted = false;
 let lastTotal = 0;
+let productQuery = '';
 
 function freshState(vehicle) {
   return { vehicle, zones: {}, fitment: '', accessories: [], customer: {} };
@@ -132,19 +133,11 @@ function renderZoneList() {
 // ── Zone selection + product panel ───────────────────────────
 function selectZone(zoneId) {
   activeZone = zoneId;
+  productQuery = '';
   renderCar();
   renderZoneList();
   renderProductPanel();
   updateStepper();
-}
-
-function brandedOptions(list, currentId) {
-  const byBrand = {};
-  list.forEach(p => { (byBrand[p.brand] = byBrand[p.brand] || []).push(p); });
-  return Object.entries(byBrand).map(([brand, items]) => {
-    const opts = items.map(p => `<option value="${p.id}" ${p.id === currentId ? 'selected' : ''}>${p.name} · ${priceLabel(p)}</option>`).join('');
-    return (brand === '—' || brand === 'Other') ? opts : `<optgroup label="${brand}">${opts}</optgroup>`;
-  }).join('');
 }
 
 function renderProductPanel() {
@@ -156,29 +149,58 @@ function renderProductPanel() {
     return;
   }
   const info = zoneInfo[activeZone];
-  const list = catalog[info.category] || [];
+  const count = (catalog[info.category] || []).length;
   const current = state.zones[activeZone];
   let html = `<div class="zone-card">
-    <div class="zone-card-title">${info.icon} ${info.label}<span class="zct-cat">${info.category}</span></div>
-    <label class="field-label">Select product</label>
-    <select class="select" id="zoneSelect">
-      <option value="">— Choose —</option>${brandedOptions(list, current && current.id)}
-    </select>`;
+    <div class="zone-card-title">${info.icon} ${info.label}<span class="zct-cat">${info.category}</span></div>`;
   if (current) {
     html += `<div class="chosen">
       <div class="chosen-name"><span>${current.name}</span><span>${priceLabel(current)}</span></div>
-      <div class="chosen-detail">${current.detail}</div></div>`;
+      <div class="chosen-detail">${current.detail || ''}</div></div>`;
   }
-  html += `</div>`;
+  html += `<input class="prod-search" id="prodSearch" placeholder="Search ${count} options…" autocomplete="off" spellcheck="false">
+    <div class="prod-results" id="prodResults"></div>
+    <div class="prod-count" id="prodCount"></div>`;
   const pairs = { frontL:'frontR', frontR:'frontL', rearL:'rearR', rearR:'rearL', tweeterL:'tweeterR', tweeterR:'tweeterL' };
   const partner = pairs[activeZone];
   if (partner && current && vehicleConfigs[state.vehicle].zones[partner] && !state.zones[partner]) {
     html += `<button class="btn ghost" id="mirrorBtn" style="width:100%;margin-top:.6rem">⇄ Mirror to ${zoneInfo[partner].label}</button>`;
   }
+  html += `</div>`;
   panel.innerHTML = html;
-  $('zoneSelect').onchange = (e) => assignProduct(e.target.value);
+
+  const search = $('prodSearch');
+  search.value = productQuery;
+  search.oninput = () => { productQuery = search.value; fillResults(); };
+  fillResults();
   const mb = $('mirrorBtn');
   if (mb) mb.onclick = () => mirrorZone(activeZone, partner);
+}
+
+// Searchable, brand-grouped results for the active zone.
+function fillResults() {
+  const info = zoneInfo[activeZone];
+  const list = catalog[info.category] || [];
+  const q = productQuery.trim().toLowerCase();
+  const cur = state.zones[activeZone];
+  const matches = q ? list.filter(p => (p.name + ' ' + p.brand).toLowerCase().includes(q)) : list;
+  const CAP = 60;
+  const byBrand = {};
+  matches.slice(0, CAP).forEach(p => { (byBrand[p.brand] = byBrand[p.brand] || []).push(p); });
+  const res = $('prodResults');
+  if (!matches.length) {
+    res.innerHTML = `<div class="prod-empty">No matches for “${productQuery}”.</div>`;
+  } else {
+    res.innerHTML = Object.entries(byBrand).map(([brand, ps]) => {
+      const head = (brand && brand !== '—' && brand !== 'Other') ? `<div class="prod-brand">${brand}</div>` : '';
+      return head + ps.map(p => `<div class="prod-opt ${cur && cur.id === p.id ? 'sel' : ''}" data-id="${p.id}">
+        <span class="prod-opt-name">${p.name}</span><span class="prod-opt-price">${priceLabel(p)}</span></div>`).join('');
+    }).join('');
+    res.querySelectorAll('.prod-opt').forEach(el => el.onclick = () => assignProduct(el.dataset.id));
+  }
+  $('prodCount').textContent = matches.length > CAP
+    ? `Showing ${CAP} of ${matches.length} — keep typing to narrow`
+    : `${matches.length} option${matches.length === 1 ? '' : 's'}`;
 }
 
 function assignProduct(id) {
