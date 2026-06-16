@@ -1,4 +1,4 @@
-# Vehicle artwork — generation prompts
+# Vehicle artwork — ChatGPT (GPT-4o) image prompts
 
 The configurator stage loads a top-down image per body type from this folder:
 
@@ -8,78 +8,72 @@ assets/vehicles/hatchback.webp    doublecab.webp
 assets/vehicles/suv.webp          singlecab.webp
 ```
 
-`.webp` is preferred; `.png` also works (the app tries `.webp` then `.png`, then
-falls back to the built-in wireframe). Until you add these files, the wireframe shows.
+ChatGPT outputs **PNG** — that's fine, the app tries `.webp` then `.png`, then falls
+back to the built-in wireframe. Save each image as `assets/vehicles/<type>.png`.
 
 The glowing component hotspots are positioned by **percentage** over the image, so the
 artwork **must** follow the alignment rules below or the dots won't sit on the speakers.
 
 ---
 
-## Non-negotiable alignment rules (all 6 must match)
+## Alignment rules (all 6 must match, or hotspots drift)
 
-- **True top-down**, 90° overhead, **orthographic** (no perspective/tilt).
-- **Front of the vehicle points UP** (towards the top edge of the frame).
-- Vehicle **centered**, occupying ~70% of width with even margins (~15% each side).
-- **Aspect ratio 3:2**, export **1500 × 1000 px**.
-- **Roof cut away / x-ray top view** so the **interior is visible** — seats, doors,
-  dashboard, boot. (This is what makes speaker locations read for the customer.)
-- **Transparent background** (preferred) or solid `#070912`.
-- No text, no logos, no watermark, no people, no wheels-off — just the vehicle.
-
-## House style (keep identical across all 6 for a cohesive set)
-
-> dark metallic charcoal-grey bodywork, soft studio lighting from above, subtle
-> cyan rim light (#19d0ff) along the panel edges, faint interior glow, clean
-> premium automotive render, high detail, sharp, minimal, slight soft shadow
-> beneath the car, neutral colour interior
-
-**Tips for consistency:** generate all six in one session with the same style; in
-Midjourney use `--ar 3:2 --style raw` and reuse a `--sref` / seed across all six; in
-DALL·E/SDXL paste the House style block into every prompt and keep wording identical.
+- **True top-down**, directly overhead, **orthographic** (no perspective/tilt).
+- **Front of the vehicle points UP** (towards the top of the frame).
+- Vehicle **centered**, filling ~70% of the width, even margins both sides.
+- **Landscape / wide (3:2)** — in ChatGPT choose the **landscape** option (1536×1024).
+- **Roof removed / cutaway** so the **interior is visible** — seats, doors, dash, boot.
+- **No text, labels, logos, watermarks, people, or measurement lines.**
 
 ---
 
-## Per-vehicle prompts
+## How to generate (do this in one ChatGPT chat for a matching set)
 
-Paste **House style** + the line below. (Written for Midjourney/DALL·E; adapt freely.)
+1. Paste **Prompt 1 (sedan)** below — it contains the full style.
+2. When you choose the size, pick **landscape (wide)**.
+3. For each of the other five, paste the short follow-up:
+   > Generate the next one in the **exact same style, lighting, overhead angle, scale
+   > and dark background as the previous image** — change only the vehicle to: **<X>**.
+   …replacing `<X>` with the vehicle line from that prompt.
+4. Download each, rename to `sedan.png`, `hatchback.png`, `suv.png`, `coupe.png`,
+   `doublecab.png`, `singlecab.png`, and put them in this folder.
 
-**sedan.webp**
-> Top-down orthographic x-ray view of a 4-door **sedan**, roof removed showing two rows
-> of seats, four doors, engine bay at the top and boot at the bottom, front of car
-> facing up, centered. [House style] --ar 3:2 --style raw
+---
 
-**hatchback.webp**
-> Top-down orthographic x-ray view of a compact **5-door hatchback**, roof removed
-> showing two seat rows and a short rear cargo area, four doors, front facing up,
-> centered. [House style] --ar 3:2 --style raw
+## The full style (used by Prompt 1; reused automatically by follow-ups)
 
-**suv.webp**
-> Top-down orthographic x-ray view of a large **SUV**, roof removed showing two/three
-> seat rows and a rear boot, four doors, wide stance, front facing up, centered.
-> [House style] --ar 3:2 --style raw
+> Create a wide landscape image, 3:2 aspect ratio. A photorealistic **top-down view,
+> directly overhead and orthographic with no perspective distortion**, of **<VEHICLE>**,
+> shown as if the roof has been cleanly removed to reveal the entire interior — seats,
+> door cards, dashboard, centre console and boot/cargo area all clearly visible from
+> above. The body is **dark metallic charcoal-grey**, softly lit from directly above,
+> with a subtle **cyan (#19D0FF) rim light** tracing the body edges and a faint cool
+> interior glow. Premium, clean, minimal automotive studio render — sharp, detailed,
+> high quality. The **front of the vehicle points to the top of the frame**. **Centre**
+> the vehicle with even margins so it fills about 70% of the width. **Solid very dark
+> background, colour #070912.** Absolutely **no text, no labels, no logos, no
+> watermarks, no people, and no measurement lines.**
 
-**coupe.webp**
-> Top-down orthographic x-ray view of a sporty **2-door coupé**, roof removed showing
-> two front seats and a small rear bench, long bonnet, front facing up, centered.
-> [House style] --ar 3:2 --style raw
+*(Prefer a transparent background? Replace the background sentence with "Transparent
+background." Both work — the stage behind it is #070912 anyway.)*
 
-**doublecab.webp**
-> Top-down orthographic x-ray view of a **double-cab bakkie / pickup truck**, roof
-> removed showing a full 4-door cab with two seat rows, and a large open load bed at
-> the rear, front facing up, centered. [House style] --ar 3:2 --style raw
+---
 
-**singlecab.webp**
-> Top-down orthographic x-ray view of a **single-cab bakkie / pickup truck**, roof
-> removed showing a 2-door cab with one seat row, and a long open load bed taking up
-> the rear two-thirds, front facing up, centered. [House style] --ar 3:2 --style raw
+## The six vehicles (the `<VEHICLE>` line for each)
+
+1. **sedan** — a 4-door sedan/saloon: two rows of seats, four doors, an engine bay at the top and a separate boot at the bottom.
+2. **hatchback** — a compact 5-door hatchback: two rows of seats, four doors, and a short rear cargo area under the tailgate.
+3. **suv** — a large SUV: tall, wide body, two (or three) rows of seats, four doors and a rear boot.
+4. **coupe** — a sporty 2-door coupé: a long bonnet, two doors, two front seats and a small rear bench.
+5. **doublecab** — a double-cab bakkie / pickup truck: a full four-door cab with two seat rows at the front, and a large open load bed/cargo tub across the rear third.
+6. **singlecab** — a single-cab bakkie / pickup truck: a two-door cab with a single seat row at the front, and a long open load bed/cargo tub across the rear two-thirds.
 
 ---
 
 ## After generating
 
-1. Crop each to 3:2, save as `assets/vehicles/<type>.webp` (1500×1000).
-2. Run `npm run dev` and click through the vehicle picker — the hotspots should sit on
-   the doors/dash/boot. If a dot is slightly off, nudge that zone's `x`/`y` percentage
-   in `js/data/vehicles.js` (each zone is `{x, y}` in % of the frame).
-3. Commit the images.
+1. Save each as `assets/vehicles/<type>.png` (sedan, hatchback, suv, coupe, doublecab, singlecab).
+2. `npm run dev` → click through the vehicle picker; hotspots should sit on the
+   doors/dash/boot. If a dot is slightly off, nudge that zone's `x`/`y` (% of frame)
+   in `js/data/vehicles.js`.
+3. Commit the images. (Or upload them in chat and I'll place + align them.)

@@ -1,0 +1,111 @@
+APEX CUSTOMS — TOP-DOWN VEHICLE IMAGE PROMPTS (for ChatGPT / GPT-4o image generation)
+=====================================================================================
+
+HOW TO USE
+- Paste a prompt into ChatGPT. When it asks (or in the size picker) choose LANDSCAPE / WIDE (3:2).
+- Each prompt below is self-contained — you can paste any one on its own.
+- For a perfectly MATCHING set, do them in ONE chat: paste #1, then for the rest say:
+  "Same exact style, lighting, overhead angle, scale and dark background as the previous
+   image — change only the vehicle to: <paste the vehicle line>."
+- Download each, rename to: sedan.png, hatchback.png, suv.png, coupe.png, doublecab.png, singlecab.png
+- Send them back to me and I'll drop them in and line the hotspots up.
+
+MUST-HAVES (already baked into every prompt — don't remove):
+- True top-down, directly overhead, orthographic (no perspective/tilt)
+- Front of vehicle points to TOP of frame; vehicle centered, ~70% of width
+- Roof removed / cutaway so the interior (seats, doors, dash, boot) is visible
+- No text, labels, logos, watermarks, people or measurement lines
+
+
+-------------------------------------------------------------------------------------
+1) SEDAN  -> save as  sedan.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a 4-door sedan/saloon car,
+shown as if the roof has been cleanly removed to reveal the entire interior — two rows of
+seats, four doors, dashboard and centre console, with the engine bay at the top and a
+separate boot at the bottom, all clearly visible from above. The body is dark metallic
+charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim light
+tracing the body edges and a faint cool interior glow. Premium, clean, minimal automotive
+studio render — sharp, detailed, high quality. The front of the car points to the top of
+the frame. Centre the car with even margins so it fills about 70% of the width. Solid very
+dark background, colour #070912. Absolutely no text, no labels, no logos, no watermarks,
+no people, and no measurement lines.
+
+
+-------------------------------------------------------------------------------------
+2) HATCHBACK  -> save as  hatchback.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a compact 5-door hatchback,
+shown as if the roof has been cleanly removed to reveal the entire interior — two rows of
+seats, four doors, dashboard and centre console, and a short rear cargo area under the
+tailgate, all clearly visible from above. The body is dark metallic charcoal-grey, softly
+lit from directly above, with a subtle cyan (#19D0FF) rim light tracing the body edges and
+a faint cool interior glow. Premium, clean, minimal automotive studio render — sharp,
+detailed, high quality. The front of the car points to the top of the frame. Centre the
+car with even margins so it fills about 70% of the width. Solid very dark background,
+colour #070912. Absolutely no text, no labels, no logos, no watermarks, no people, and no
+measurement lines.
+
+
+-------------------------------------------------------------------------------------
+3) SUV  -> save as  suv.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a large SUV with a tall, wide
+body, shown as if the roof has been cleanly removed to reveal the entire interior — two (or
+three) rows of seats, four doors, dashboard and centre console, and a rear boot, all clearly
+visible from above. The body is dark metallic charcoal-grey, softly lit from directly above,
+with a subtle cyan (#19D0FF) rim light tracing the body edges and a faint cool interior glow.
+Premium, clean, minimal automotive studio render — sharp, detailed, high quality. The front
+of the vehicle points to the top of the frame. Centre the vehicle with even margins so it
+fills about 70% of the width. Solid very dark background, colour #070912. Absolutely no text,
+no labels, no logos, no watermarks, no people, and no measurement lines.
+
+
+-------------------------------------------------------------------------------------
+4) COUPE  -> save as  coupe.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a sporty 2-door coupé with a
+long bonnet, shown as if the roof has been cleanly removed to reveal the entire interior —
+two front seats and a small rear bench, two doors, dashboard and centre console, all clearly
+visible from above. The body is dark metallic charcoal-grey, softly lit from directly above,
+with a subtle cyan (#19D0FF) rim light tracing the body edges and a faint cool interior glow.
+Premium, clean, minimal automotive studio render — sharp, detailed, high quality. The front
+of the car points to the top of the frame. Centre the car with even margins so it fills about
+70% of the width. Solid very dark background, colour #070912. Absolutely no text, no labels,
+no logos, no watermarks, no people, and no measurement lines.
+
+
+-------------------------------------------------------------------------------------
+5) DOUBLE CAB BAKKIE / PICKUP  -> save as  doublecab.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a double-cab bakkie (pickup
+truck), shown as if the cab roof has been cleanly removed to reveal the interior — a full
+four-door cab with two rows of seats, dashboard and centre console — and a large open load
+bed / cargo tub taking up the rear third, all clearly visible from above. The body is dark
+metallic charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim
+light tracing the body edges and a faint cool interior glow. Premium, clean, minimal
+automotive studio render — sharp, detailed, high quality. The front of the vehicle points
+to the top of the frame. Centre the vehicle with even margins so it fills about 70% of the
+width. Solid very dark background, colour #070912. Absolutely no text, no labels, no logos,
+no watermarks, no people, and no measurement lines.
+
+
+-------------------------------------------------------------------------------------
+6) SINGLE CAB BAKKIE / PICKUP  -> save as  singlecab.png
+-------------------------------------------------------------------------------------
+Create a wide landscape image, 3:2 aspect ratio. A photorealistic top-down view, directly
+overhead and orthographic with no perspective distortion, of a single-cab bakkie (pickup
+truck), shown as if the cab roof has been cleanly removed to reveal the interior — a two-door
+cab with a single row of seats, dashboard and centre console — and a long open load bed /
+cargo tub taking up the rear two-thirds, all clearly visible from above. The body is dark
+metallic charcoal-grey, softly lit from directly above, with a subtle cyan (#19D0FF) rim
+light tracing the body edges and a faint cool interior glow. Premium, clean, minimal
+automotive studio render — sharp, detailed, high quality. The front of the vehicle points
+to the top of the frame. Centre the vehicle with even margins so it fills about 70% of the
+width. Solid very dark background, colour #070912. Absolutely no text, no labels, no logos,
+no watermarks, no people, and no measurement lines.
