@@ -48,7 +48,13 @@ function parseCSV(text) {
 }
 
 // ── Helpers ──────────────────────────────────────────────────
-const strip = (s) => (s || '').replace(/<[^>]*>/g, ' ').replace(/&[a-z]+;/gi, ' ').replace(/\s+/g, ' ').trim();
+const strip = (s) => (s || '')
+  .replace(/<[^>]*>/g, ' ')        // html tags
+  .replace(/&[a-z]+;/gi, ' ')      // html entities
+  .replace(/\\[rnt]/g, ' ')        // literal \n \r \t escape sequences
+  .replace(/[\r\n\t]+/g, ' ')      // real newlines/tabs
+  .replace(/\s+/g, ' ').trim();
+const clip = (s, n = 64) => { s = strip(s); if (s.length <= n) return s; const c = s.slice(0, n); const sp = c.lastIndexOf(' '); return (sp > 30 ? c.slice(0, sp) : c).trim() + '…'; };
 const slug = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 const num = (s) => { const n = parseFloat(String(s || '').replace(/[^0-9.]/g, '')); return isNaN(n) ? 0 : Math.round(n); };
 
@@ -117,7 +123,7 @@ for (const r of rows.slice(1)) {
   let id = slug(C.sku >= 0 && r[C.sku] ? r[C.sku] : name) || slug(name);
   while (ids.has(id)) id += '-x';
   ids.add(id);
-  const detail = (strip(C.sdesc >= 0 ? r[C.sdesc] : '') || strip(C.desc >= 0 ? r[C.desc] : '')).slice(0, 70);
+  const detail = clip((C.sdesc >= 0 ? r[C.sdesc] : '') || (C.desc >= 0 ? r[C.desc] : ''));
   out[cat].push({ id, brand: detectBrand(name, C.brand >= 0 ? r[C.brand] : ''), name, detail, price });
 }
 
