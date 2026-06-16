@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js --no-reload",
+    "test": "node test/smoke.mjs"
   },
   "engines": {
     "node": ">=18"
